@@ -1,0 +1,17 @@
+#loader {
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+
+    display: flex;
+    align-items: center;
+
+    p {
+        display: block;
+        margin-left: var(--gutter);
+
+        font-family: 'MuseoModerno';
+        font-size: var(--nav-logo-fs);
+        font-weight: 500;
+    }
+}

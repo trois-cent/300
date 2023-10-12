@@ -1,0 +1,143 @@
+nav {
+    position: fixed;
+    z-index: var(--z-nav);
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--black);
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: var(--nav-height);
+        translate: 0 -50%;
+        
+        width: 100%;
+        height: var(--border-thickness);
+        background-color: var(--white);
+
+        opacity: 0;
+        animation: opacity-1 1s ease forwards;
+    }
+
+    #brand p {
+        margin-left: var(--gutter);
+
+        font-family: 'MuseoModerno';
+        font-size: var(--nav-logo-fs);
+        font-weight: 500;
+        
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .bar {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+
+        .nav-button {
+            position: relative;
+
+            font-weight: 500;
+            letter-spacing: 0.1em;
+
+            height: 100%;
+
+            padding-inline: var(--gutter);
+            display: flex;
+            align-items: center;
+
+            opacity: 0;
+            animation: opacity-1 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s forwards;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                width: var(--border-thickness);
+                height: 100%;
+                background-color: var(--white);
+        
+                opacity: 0;
+                animation: opacity-1 1s ease forwards;
+            }
+        }
+
+        #hmbg {
+            position: relative;
+
+            width: var(--nav-height);
+            height: 100%;
+            border-left: var(--border-thickness) solid var(--white);
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+            }
+        }
+    }
+
+    .body {
+        position: absolute;
+        z-index: -1;
+        top: calc(100% - 1px);
+
+        width: 100%;
+        height: auto;
+        background-color: var(--white);
+
+        padding: var(--gutter);
+        display: none;
+        flex-direction: column;
+
+        a, button {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: left;
+            
+            color: var(--black);
+        }
+
+        a {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    nav {
+        #brand p {
+            font-size: 40px;
+        }
+
+        .bar {
+            .nav-button {
+                display: none;
+            }
+
+            .body {
+                display: flex;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    nav .bar #hmbg {
+        display: none;
+    }
+}

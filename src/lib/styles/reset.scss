@@ -1,0 +1,74 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: var(--black);
+  color: var(--white);
+
+  font-family: 'Poppins';
+  font-size: 1rem;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  font-size: initial;
+  outline: none;
+  border: none;
+  color: inherit;
+  background: none;
+ 
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
+
+input {
+  outline: unset;
+  border: unset;
+}

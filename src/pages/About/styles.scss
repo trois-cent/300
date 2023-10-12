@@ -1,0 +1,183 @@
+#about {
+    
+
+    #links {
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(1, 80px);
+            place-items: center;
+
+            button {
+                font-weight: 500;
+                letter-spacing: .1em;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &.firstload .grid button:hover::before {
+            clip-path: inset(100% 0 0 0);
+        }
+    }
+
+    #who {
+        .grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            p {
+                grid-column: 4 / span 2;
+                grid-row: 1 / span 2;
+
+                min-height: 400px;
+            }
+
+            #per {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    #what {
+        .grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            p {
+                grid-row: span 2;
+                grid-column: span 2;
+
+                min-height: 400px;
+            }
+
+            #question-mark {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    #why {
+        .grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            p {
+                grid-row: span 2;
+                grid-column: span 2;
+
+                min-height: 400px;
+            }
+
+            .full-col {
+                grid-row: span 2;
+            }
+
+            .y {
+                grid-column: 2;    
+                grid-row: 2;
+            }
+        }
+    }
+
+    #how {
+        .grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            a {
+                grid-column: 3 / span 3;
+                grid-row: 1 / span 2;
+
+                min-height: 400px;
+
+                display: grid;
+                place-items: center;
+
+                p {
+                    padding-bottom: 0;
+                }
+            }
+
+            #per {
+                grid-column: span 2;
+            }
+        }
+    }
+}
+
+
+// switch links grid to 2 cols
+@media screen and (max-width: 900px) {
+    
+    #about #links .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 80px);
+    }
+
+}
+
+// adapt grids for mobile 
+@media screen and (max-width: 1150px) {
+    
+    // grids
+    #about {
+        #who .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 150px 150px auto 150px;
+
+            p {
+                grid-column: span 2;
+                grid-row: unset;
+            }
+            
+            #per {
+                grid-row: 4;
+            }
+
+            .letter#o {
+                grid-column: 2;
+            }
+
+            #question-mark {
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+
+        #what .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 150px 150px 150px auto;
+
+            p {
+                grid-row: 4;
+            }
+
+            #question-mark {
+                grid-row: 3;
+            }
+        }
+
+        #why .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 150px 150px 150px auto;
+
+            .full-col {
+                grid-row: unset;
+            }
+        }
+
+        #how .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 150px 150px auto;
+
+            a {
+                grid-column: span 2;
+                grid-row: 3;
+
+                min-height: 250px;
+            }
+        }
+    }
+}
